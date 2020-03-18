@@ -4,9 +4,15 @@ namespace Bot.WhatsApp.Selenium
 {
     public static class Utils
     {
+        public static void LogImportant(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"[>>>>] {message}");
+            Console.ResetColor();
+        }
         public static void LogInfo(string message)
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"[INFO] {message}");
             Console.ResetColor();
         }
@@ -20,11 +26,11 @@ namespace Bot.WhatsApp.Selenium
 
         public static void LogNumberOfMessagesSent(int success, int failed)
         {
-            Console.Write("Convites ");
+            Console.Write("[INFO] ");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write($"Validos: {success} ");
+            Console.Write($"Mensagens enviadas (grupos): {success} ");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Invalidos: {failed} ");
+            Console.Write($"Convites Invalidos: {failed} \n");
             Console.ResetColor();
         }
 
