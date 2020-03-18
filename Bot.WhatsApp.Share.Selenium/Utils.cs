@@ -30,7 +30,7 @@ namespace Bot.WhatsApp.Selenium
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"Mensagens enviadas (grupos): {success} ");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Convites Invalidos: {failed} \n");
+            Console.Write($"Convites Invalidos: {failed}");
             Console.ResetColor();
         }
 

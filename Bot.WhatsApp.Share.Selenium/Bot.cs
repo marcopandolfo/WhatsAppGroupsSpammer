@@ -18,6 +18,7 @@ namespace Bot.WhatsApp.Selenium
             List<string> links = GetNewInvites();
             int success = 0;
             int failed = 0;
+            int counter = 0;
 
             Console.Clear();
             LogImportant($"BUSCA DE LINKS FINALIZADA! FORAM ENCONTRADOS [{links.Count}] LINKS");
@@ -30,11 +31,13 @@ namespace Bot.WhatsApp.Selenium
             Thread.Sleep(TimeSpan.FromSeconds(15));
             Console.Clear();
 
-            string message = GetMessageToSend();
             foreach (string link in links)
             {
+                counter++;
                 Console.Clear();
                 LogNumberOfMessagesSent(success, failed);
+                Console.Write($" Progresso: {counter}/{links.Count}\n");
+
                 try
                 {
                     SendMessageToGroup(link);
@@ -100,13 +103,13 @@ namespace Bot.WhatsApp.Selenium
 
         private static List<string> GetNewInvites()
         {
-            int pages = 1;
+            int pages = 182;
             List<string> links = new List<string>();
             int urlCounter = 1;
 
             for (int page = 1; page <= pages; page++)
             {
-                string url = $"https://gruposwhats.app/?page=8";
+                string url = $"https://gruposwhats.app/?page={page}";
 
                 using (WebClient client = new WebClient())
                 {
