@@ -75,6 +75,7 @@ namespace Bot.WhatsApp.Selenium
 
             LogInfo("Escrevendo a mensagem");
             var inputMsg = By.XPath("//*[@id='main']/footer/div[1]/div[2]/div/div[2]");
+            
             webDriver.SetText(inputMsg, GetMessageToSend());
 
             LogInfo("Enviando a mensagem");
@@ -82,16 +83,16 @@ namespace Bot.WhatsApp.Selenium
             Thread.Sleep(TimeSpan.FromSeconds(20));
 
             LogInfo("Abrindo o menu para sair do grupo.");
-            var opcoesDoMenu = webDriver.FindElement(By.XPath("//*[@id='main']/header"));
+            var opcoesDoMenu = webDriver.FindElement(By.XPath("//*[@id='main']/header/div[2]"));
             opcoesDoMenu.Click();
 
             LogInfo("Aguardando para o botão sair aparacer.");
-            Thread.Sleep(TimeSpan.FromSeconds(7));
+            Thread.Sleep(TimeSpan.FromSeconds(3));
 
             LogInfo("Clicando pra sair do grupo.");
-            var btnSairGrupo = webDriver.FindElement(By.XPath("//*[@id='app']/div/div/div[2]/div[3]/span/div/span/div/div/div[1]/div[6]/div/div[2]/div/span"));
+            var btnSairGrupo = webDriver.FindElement(By.XPath("//*[@id='app']/div/div/div[2]/div[3]/span/div/span/div/div/div[1]/div[6]/div"));
             btnSairGrupo.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+            Thread.Sleep(TimeSpan.FromSeconds(3));
 
             LogInfo("Confirmando saida");
             var confirmExit = webDriver.FindElement(By.XPath("//*[@id='app']/div/span[2]/div/div/div/div/div/div/div[2]/div[2]"));
@@ -103,7 +104,7 @@ namespace Bot.WhatsApp.Selenium
 
         private static List<string> GetNewInvites()
         {
-            int pages = 182;
+            int pages = 1;
             List<string> links = new List<string>();
             int urlCounter = 1;
 

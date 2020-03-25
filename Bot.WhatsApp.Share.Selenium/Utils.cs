@@ -36,11 +36,7 @@ namespace Bot.WhatsApp.Selenium
 
         public static string GetMessageToSend()
         {
-            return @"
-                Cansado de usar sites de torrents cheio de anúncios? Visite nosso site!
-                Site rápido, moderno e sem anúncios excessivos!
-                Últimos lançamentos de 2020!
-                Acesse: https://speckoz.live";
+            return "Cansado de usar sites de torrents cheio de anúncios? Visite nosso site! Site rápido, moderno e sem anúncios excessivos! Últimos lançamentos de 2020! Acesse: https://speckoz.live";
         }
     }
 }
