@@ -15,9 +15,6 @@ Para rodar o bot, apenas abra o projeto no seu visual studio e inicie o bot e el
 
 Após ele pegar todos os links, você deverá pressionar enter e ler o QR code que irá abrir no navegador, após isso o bot vai começar o envio das mensagens.
 
-
-OBS: Altere o path absoluto do driver do navegador para o da sua máquina no arquivo Bot.cs linha 15.
-
 O driver vem junto com o projeto na pasta Driver/ então basta copiar o path dessa pasta e colar na linha 15.
 
 Altere a mensagem para a que você deseja em Utils.cs linha 39.
