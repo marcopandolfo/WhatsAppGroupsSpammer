@@ -12,7 +12,7 @@ namespace Bot.WhatsApp.Selenium
 {
     public class Bot
     {
-        static readonly IWebDriver webDriver = WebDriverFactory.CreateWebDriver(Browser.Chrome, @"C:\Users\marco\dev\WhatsAppGroupsSpammer\Driver", false);
+        static readonly IWebDriver webDriver = WebDriverFactory.CreateWebDriver(Browser.Chrome, "Driver", false);
         static void Main(string[] args)
         {
             try
